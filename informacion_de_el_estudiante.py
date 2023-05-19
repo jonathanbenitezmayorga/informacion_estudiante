@@ -17,25 +17,42 @@ def abrir_toplevel_infstu():
     # etiqueta para valor en centigrados
     lb_inf = Label(toplevel_infstu, text = "Nombre = ")
     lb_inf.config(bg="white", fg="blue", font=("Helvetica", 18))
-    lb_inf.place(x=150, y=60)
+    lb_inf.place(x=50, y=10)
+
 
     # caja de texto para valor en centigrados
-    entry_inf = Entry(toplevel_infstu, textvariable=c)
-    entry_inf.config(bg="white", fg="blue", font=("Times New Roman", 18), width=6)
+    entry_inf = Entry(toplevel_infstu, textvariable=toplevel_infstu)
+    entry_inf.config(bg="white", fg="blue", font=("Times New Roman", 18), width=20)
     entry_inf.focus_set()
-    entry_inf.place(x=210,y=60)
+    entry_inf.place(x=170,y=10)
+
+    # etiqueta para valor en centigrados
+    lb_inf = Label(toplevel_infstu, text = "Apellido = ")
+    lb_inf.config(bg="white", fg="blue", font=("Helvetica", 18))
+    lb_inf.place(x=50, y=60)
+    
+    entry_inf = Entry(toplevel_infstu, textvariable=toplevel_infstu)
+    entry_inf.config(bg="white", fg="blue", font=("Times New Roman", 18), width=20)
+    entry_inf.focus_set()
+    entry_inf.place(x=170,y=60)
+    # etiqueta para numero de telefono
+    lb_inf = Label(toplevel_infstu, text = "NUM telefono = ")
+    lb_inf.config(bg="white", fg="blue", font=("Helvetica", 18))
+    lb_inf.place(x=50, y=120)
+    # caja de texto para valor en centigrados
+    entry_inf = Entry(toplevel_infstu, textvariable=toplevel_infstu)
+    entry_inf.config(bg="white", fg="blue", font=("Times New Roman", 18), width=20)
+    entry_inf.focus_set()
+    entry_inf.place(x=220,y=120)
 
    # boton para convertir
     bt_aceptar = Button(toplevel_infstu,text="Aceptar", command=aceptar)
-    bt_aceptar.place(x=100, y=150, width=100, height=30)
+    bt_aceptar.place(x=230, y=250, width=100, height=30)
 
-# aceptar
 def aceptar():
     global cent
-    cent = int(c.get())
+    cent = int(aceptar.get())
     toplevel_infstu.destroy()
-
-
 
 
 
@@ -50,25 +67,65 @@ def abrir_toplevel_notas():
     toplevel_notas.config(bg="white")
 
         # etiqueta para valor en centigrados
-    lb_notas = Label(toplevel_notas, text = "notas =")
+    lb_notas = Label(toplevel_notas, text = "cognitivo =")
     lb_notas.config(bg="white", fg="blue", font=("Helvetica", 18))
-    lb_notas.place(x=150, y=60)
+    lb_notas.place(x=50, y=10)
 
     # caja de texto para valor en centigrados
-    entry_notas = Entry(toplevel_notas, textvariable=c)
+    entry_notas = Entry(toplevel_notas, textvariable=toplevel_notas)
     entry_notas.config(bg="white", fg="blue", font=("Times New Roman", 18), width=6)
     entry_notas.focus_set()
-    entry_notas.place(x=210,y=60)
+    entry_notas.place(x=230,y=10)
+
+    # etiqueta para valor en centigrados
+    lb_notas = Label(toplevel_notas, text = "procedimental =")
+    lb_notas.config(bg="white", fg="blue", font=("Helvetica", 18))
+    lb_notas.place(x=50, y=60)
+
+    # caja de texto para valor en centigrados
+    entry_notas = Entry(toplevel_notas, textvariable=toplevel_notas)
+    entry_notas.config(bg="white", fg="blue", font=("Times New Roman", 18), width=6)
+    entry_notas.focus_set()
+    entry_notas.place(x=230,y=60)
+
+    # etiqueta para valor en centigrados
+    lb_notas = Label(toplevel_notas, text = "actitudinal =")
+    lb_notas.config(bg="white", fg="blue", font=("Helvetica", 18))
+    lb_notas.place(x=50, y=115)
+
+    # caja de texto para valor en centigrados
+    entry_notas = Entry(toplevel_notas, textvariable=toplevel_notas)
+    entry_notas.config(bg="white", fg="blue", font=("Times New Roman", 18), width=6)
+    entry_notas.focus_set()
+    entry_notas.place(x=230,y=115)
+
+    # etiqueta para valor en centigrados
+    lb_notas = Label(toplevel_notas, text = "autoe =")
+    lb_notas.config(bg="white", fg="blue", font=("Helvetica", 18))
+    lb_notas.place(x=50, y=160)
+
+    # caja de texto para valor en centigrados
+    entry_notas = Entry(toplevel_notas, textvariable=toplevel_notas)
+    entry_notas.config(bg="white", fg="blue", font=("Times New Roman", 18), width=6)
+    entry_notas.focus_set()
+    entry_notas.place(x=230,y=160)
+
+    # etiqueta para valor en centigrados
+    lb_notas = Label(toplevel_notas, text = "bimestral =")
+    lb_notas.config(bg="white", fg="blue", font=("Helvetica", 18))
+    lb_notas.place(x=50, y=200)
+
+    # caja de texto para valor en centigrados
+    entry_notas = Entry(toplevel_notas, textvariable=toplevel_notas)
+    entry_notas.config(bg="white", fg="blue", font=("Times New Roman", 18), width=6)
+    entry_notas.focus_set()
+    entry_notas.place(x=230,y=200)
 
    # boton para convertir
     bt_aceptar = Button(toplevel_notas,text="Aceptar", command=aceptar)
-    bt_aceptar.place(x=100, y=150, width=100, height=30)
+    bt_aceptar.place(x=230, y=250, width=100, height=30)
 
-# aceptar
-def aceptar():
-    global cent
-    cent = int(c.get())
-    toplevel_notas.destroy()
+
 
 
 
@@ -106,26 +163,18 @@ def abrir_toplevel_imc():
 
     # sumar
 def convertir():
-    messagebox.showinfo("Temperatura 1.0", "Conversión realizada")
-    cent = int(c.get())
-    if kf.get()=="kelvin":
-        k = cent + 273.15
-        t_resultados.insert(INSERT, f"\n{int(c.get())} °C equivalen a {k} °K")
-    elif kf.get() == "fahrenheit":
-        f = cent*9/5 + 32
-        t_resultados.insert(INSERT, f"\n{int(c.get())} °C equivalen a {f} °F")
-    else:
-        t_resultados.insert(INSERT, "Debe seleccionar una opción")
+    messagebox.showinfo("informacion estudiantil", "Conversión realizada")
+
     
 # borrar
 def borrar():
-    messagebox.showinfo("Temperatura 1.0", "Los datos serán borrados")
+    messagebox.showinfo("informacion estudiantil 1.0", "Los datos serán borrados")
     c.set("")
     t_resultados.delete("1.0","end")
 
 # salir
 def salir():
-    messagebox.showinfo("Temperatura 1.0", "La app se va a cerrar")
+    messagebox.showinfo("informacion estudiantil 1.0", "La app se va a cerrar")
     ventana_principal.destroy()
 
 
@@ -139,23 +188,7 @@ def salir():
     lb_c.config(bg="white", fg="blue", font=("Helvetica", 18))
     lb_c.place(x=150, y=60)
 
-# aceptar
-def aceptar():
-    global cent
-    cent = int(c.get())
-    toplevel_infstu.destroy()
-    
-# aceptar
-def aceptar():
-    global cent
-    cent = int(c.get())
-    toplevel_notas.destroy()
 
-# aceptar
-def aceptar():
-    global cent
-    cent = int(c.get())
-    toplevel_imc.destroy()
 
 
 # se declara una variable llamada ventana_principal, que adquiere las caracteristicas de un objeto Tk()
@@ -199,15 +232,15 @@ titulo.place(x=100,y=10)
 barra_menu = Menu()
 ventana_principal.config(menu=barra_menu)
 
-menu_convertir = Menu(tearoff=0)
-menu_convertir.add_command(label="Convertir", command=convertir)
-menu_convertir.add_separator()
-menu_convertir.add_command(label="Borrar", command=borrar)
+menu_nombre = Menu(tearoff=0)
+menu_nombre.add_command(label="Nombre", command=abrir_toplevel_infstu)
+menu_nombre.add_separator()
+menu_nombre.add_command(label="Borrar", command=borrar)
 
 menu_salir = Menu(tearoff=0)
 menu_salir.add_command(label="Salir", command=salir)
 
-barra_menu.add_cascade(label="Convertir", menu=menu_convertir)
+barra_menu.add_cascade(label="Convertir", menu=menu_nombre)
 barra_menu.add_cascade(label="Salir", menu=menu_salir)
 
 
@@ -226,7 +259,6 @@ bt_notas.place(x=200, y=200)
 bt_imc = Button(frame_entrada, text="imc", command=abrir_toplevel_imc)
 bt_imc.config(bg="red", width=10, height=0)
 bt_imc.place(x=350, y=200)
-
 
 
 
